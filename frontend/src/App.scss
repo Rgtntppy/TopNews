@@ -1,0 +1,18 @@
+body {
+  background-color: #F5F8FC;
+}
+
+/*スマホ表示*/
+.pcOnly{
+  display: none;
+}
+
+/*PC表示*/
+@media(min-width:768px){
+  .pcOnly{
+      display: block;
+  }
+  .hamburgerMenu{
+      display: none;
+  }
+}

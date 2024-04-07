@@ -1,0 +1,12 @@
+.hoge {
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        li {
+            margin: 0;
+            padding: 20px 50px;
+            font-size: 150%;
+        }
+    }
+}
