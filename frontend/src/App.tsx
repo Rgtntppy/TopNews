@@ -1,11 +1,9 @@
-import 'src/App.css';
+import 'src/App.scss';
 import React, { useState, createContext} from 'react';
-import Header from 'src/tsx/Header';
-import Main from 'src/tsx/Main';
+import Header from 'src/Component/Header/Header';
+import Main from 'src/Component/Main';
 
 interface propsContext {
-  title: string;
-  setTitle: React.Dispatch<React.SetStateAction<string>>;
   tailFetchUrl: string;
   setTailFetchUrl: React.Dispatch<React.SetStateAction<string>>;
 };
@@ -13,11 +11,11 @@ interface propsContext {
 export const propsContext = createContext<propsContext | undefined>(undefined);
 
 function App() {
-  const [title, setTitle] = useState<string>('最初のページ');
   const [tailFetchUrl, setTailFetchUrl] = useState<string>('/item/8863.json?print=pretty');
+  const [title, setTitle] = useState<string>('');
   
   return (
-    <propsContext.Provider value={{ title, setTitle, tailFetchUrl, setTailFetchUrl }}>
+    <propsContext.Provider value={{ tailFetchUrl, setTailFetchUrl }}>
       <>
       <Header/>
       <Main/>
