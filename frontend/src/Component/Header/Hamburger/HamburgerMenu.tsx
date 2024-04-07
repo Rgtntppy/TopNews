@@ -34,7 +34,6 @@ const HamburgerMenu: React.FC = () => {
                     {newsList.map((newsItem, index) => (
                         <button
                         key={ index }
-                        className=''
                         onClick={ handleClick }
                         data-index={index}
                         >

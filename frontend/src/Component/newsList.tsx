@@ -17,5 +17,3 @@ export const newsList:newsList[] = [
         tailFetchUrl: '/item/126809.json?print=pretty',
     },
 ];
-
-// export default newsList;
