@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://rgtntppy.github.io/TopNews/frontend/docs/",
+  "homepage": "https://rgtntppy.github.io/TopNews/frontend/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -24,11 +24,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "clean": "rm -rf docs",
-    "move": "mv build docs",
-    "create-nojekyll": "echo > docs/.nojekyll",
-    "commit": "git add . && git commit -m 'Deploy to GitHub Pages' && git push origin master",
-    "deploy": "npm run clean && npm run build && npm run move && npm run create-nojekyll && npm run commit && gh-pages -d docs"
+    "rm": "rm -rf docs",
+    "mv": "mv build docs",
+    "git": "git add . && git commit && git push origin master",
+    "deploy": "npm run rm && npm run build && npm run mv && npm run git"
   },
   "eslintConfig": {
     "extends": [
