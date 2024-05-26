@@ -26,8 +26,8 @@
     "eject": "react-scripts eject",
     "rm": "rm -rf docs",
     "mv": "mv build docs",
-    "git": "git add . && git commit && git push origin master",
-    "deploy": "npm run rm && npm run build && npm run mv && npm run git"
+    "commit": "git add . && git commit -m 'Deploy to GitHub Pages' && git push origin master",
+    "deploy": "npm run rm && npm run build && npm run mv && npm run commit && gh-pages -d docs"
   },
   "eslintConfig": {
     "extends": [
