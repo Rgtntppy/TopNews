@@ -24,11 +24,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "rm": "rm -rf docs",
-    "mv": "mv build docs",
-    "commit": "git add . && git commit -m 'Deploy to GitHub Pages' && git push origin master",
+    "clean": "rm -rf docs",
+    "move": "mv build docs",
     "create-nojekyll": "echo > docs/.nojekyll",
-    "deploy": "npm run rm && npm run build && npm run mv && npm run commit && gh-pages -d docs"
+    "commit": "git add . && git commit -m 'Deploy to GitHub Pages' && git push origin master",
+    "deploy": "npm run clean && npm run build && npm run move && npm run create-nojekyll && npm run commit && gh-pages -d docs"
   },
   "eslintConfig": {
     "extends": [
