@@ -2,11 +2,20 @@
     ul {
         display: flex;
         flex-wrap: wrap;
+        justify-content: flex-start;
         list-style: none;
         li {
             margin: 0;
-            padding: 20px 50px;
+            padding: 5px 10px;
             font-size: 150%;
         }
     }
 }
+
+@media(max-width:480px){
+    .hoge {
+        ul {
+            justify-content: space-around;
+        }
+    }
+  }
