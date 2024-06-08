@@ -1,9 +1,6 @@
-interface newsList {
-    menuTitle: string;
-    tailFetchUrl: string;
-}
+import { newsListInterface } from "/src/Component/News/newsInterfaces";
 
-export const newsList:newsList[] = [
+export const newsList:newsListInterface[] = [
     {
         menuTitle: 'TOP',
         tailFetchUrl:'/item/8863.json?print=pretty',

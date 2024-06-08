@@ -1,0 +1,22 @@
+.newsList {
+    ul {
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        list-style: none;
+        li {
+            margin: 0;
+            padding: 5px 10px;
+            font-size: 150%;
+        }
+    }
+}
+
+@media(max-width:480px){
+    .newsList {
+        ul {
+            justify-content: space-around;
+        }
+    }
+  }
