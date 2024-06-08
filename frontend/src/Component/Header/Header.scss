@@ -2,8 +2,9 @@
     padding: 1px;
     background-color: white;
     
-    .headerTitle {
+    .title {
         margin: 20px 40px;
+        text-transform: capitalize;
     }
 
     nav.pcOnly {

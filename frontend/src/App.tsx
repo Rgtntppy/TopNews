@@ -1,4 +1,4 @@
-import 'src/App.scss';
+import 'src/app.scss';
 import React, { useState, createContext} from 'react';
 import Header from 'src/Component/Header/Header';
 import Main from 'src/Component/Main';
