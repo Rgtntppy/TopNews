@@ -1,4 +1,4 @@
-.hoge {
+.newsList {
     ul {
         padding: 0;
         display: flex;
@@ -14,7 +14,7 @@
 }
 
 @media(max-width:480px){
-    .hoge {
+    .newsList {
         ul {
             justify-content: space-around;
         }

@@ -1,6 +1,6 @@
 import { useContext, useCallback, MouseEventHandler } from 'react';
 import { propsContext } from 'src/App';
-import { newsList } from 'src/Component/newsList';
+import { newsList } from 'src/Component/News/newsList'
 
 const HeaderMenu: React.FC = () => {
     const { setTailFetchUrl } = useContext(propsContext)!;
@@ -18,7 +18,6 @@ const HeaderMenu: React.FC = () => {
                 {newsList.map((newsItem, index) => (
                 <button
                 key={ index }
-                className='headerMenuButton'
                 onClick={ handleClick }
                 data-index={index}
                 >

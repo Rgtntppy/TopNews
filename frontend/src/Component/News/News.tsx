@@ -1,3 +1,4 @@
+import 'src/Component/News/news.scss';
 import React, { useState, useEffect, useContext } from 'react';
 import { propsContext } from 'src/App';
 
@@ -31,7 +32,7 @@ const News: React.FC = () => {
     {fetchData && (
       <>
       <h2>{ fetchData.title || '' }</h2>
-      <div className='hoge'>
+      <div className='newsList'>
         {Array.isArray(fetchData) ? (
           <ul>
             {checkArray.slice(0, fetchDataLimit).map((item, index) => (

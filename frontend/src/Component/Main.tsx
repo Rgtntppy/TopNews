@@ -1,5 +1,4 @@
-import 'src/Component/Main.scss';
-import News from 'src/Component/News';
+import News from 'src/Component/News/News';
 
 const Main = () => {
     return(

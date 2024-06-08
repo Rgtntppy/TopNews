@@ -1,7 +1,7 @@
-import 'src/Component/Header/Hamburger/Hamburger.scss';
+import 'src/Component/Header/Hamburger/hamburger.scss';
 import React, { useState, useContext, useCallback, MouseEventHandler } from "react";
 import { propsContext } from "src/App";
-import { newsList } from 'src/Component/newsList';
+import { newsList } from 'src/Component/News/newsList';
 
 const HamburgerMenu: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
