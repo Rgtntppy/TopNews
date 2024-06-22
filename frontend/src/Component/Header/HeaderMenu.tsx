@@ -1,9 +1,9 @@
 import { useContext, useCallback, MouseEventHandler } from 'react';
 import { propsContext } from 'src/App';
 import { newsList } from 'src/Component/Header/newsList'
-import { HeaderMenuProps } from 'src/Component/Header/headerInterface';
+import { HeaderTabProps } from 'src/Component/Header/headerInterface';
 
-const HeaderMenu: React.FC<HeaderMenuProps> = ({ selectedTabIndex, setSelectedTabIndex }) => {
+const HeaderMenu: React.FC<HeaderTabProps> = ({ selectedTabIndex, setSelectedTabIndex }) => {
     const { setTailFetchUrl } = useContext(propsContext)!;
 
     const handleClick: MouseEventHandler<HTMLButtonElement> = useCallback((event) => {
