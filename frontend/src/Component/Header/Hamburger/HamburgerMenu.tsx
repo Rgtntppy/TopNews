@@ -1,7 +1,7 @@
 import 'src/Component/Header/Hamburger/hamburger.scss';
-import React, { useState, useContext, useCallback, MouseEventHandler } from "react";
-import { propsContext } from "src/App";
-import { newsList } from 'src/Component/News/newsList';
+import React, { useState, useContext, useCallback, MouseEventHandler } from 'react';
+import { propsContext } from 'src/App';
+import { newsList } from 'src/Component/Header/newsList';
 
 const HamburgerMenu: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -20,12 +20,12 @@ const HamburgerMenu: React.FC = () => {
     },[ isOpen ]);
 
     return (
-        <div className="hamburgerMenu">
+        <div className='hamburgerMenu'>
             {/* ハンバーガーボタン */}
             <button className={`hamburgerIcon ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
-                <div className="bar"></div>
-                <div className="bar"></div>
-                <div className="bar"></div>
+                <div className='bar'></div>
+                <div className='bar'></div>
+                <div className='bar'></div>
             </button>
             
             {/* メニュー */}
