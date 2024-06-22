@@ -8,8 +8,8 @@ const Header = () => {
 
     return (
         <div className='header'>
-            <h1 className='title'>news site</h1>
-            <HamburgerMenu/>
+            <h1 className='title'>the top trends</h1>
+            <HamburgerMenu selectedTabIndex={selectedTabIndex} setSelectedTabIndex={setSelectedTabIndex} />
             <HeaderMenu selectedTabIndex={selectedTabIndex} setSelectedTabIndex={setSelectedTabIndex} />
         </div>
     );

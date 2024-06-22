@@ -2,8 +2,9 @@ import 'src/Component/Header/Hamburger/hamburger.scss';
 import React, { useState, useContext, useCallback, MouseEventHandler } from 'react';
 import { propsContext } from 'src/App';
 import { newsList } from 'src/Component/Header/newsList';
+import { HeaderTabProps } from 'src/Component/Header/headerInterface';
 
-const HamburgerMenu: React.FC = () => {
+const HamburgerMenu: React.FC<HeaderTabProps> = ({ selectedTabIndex, setSelectedTabIndex }) => {
     const [isOpen, setIsOpen] = useState(false);
     const { setTailFetchUrl } = useContext(propsContext)!;
     
@@ -13,6 +14,7 @@ const HamburgerMenu: React.FC = () => {
         console.log(newsItem.menuTitle+'がクリックされました');
         setTailFetchUrl(newsItem.tailFetchUrl);
         setIsOpen(!isOpen);
+        setSelectedTabIndex(index);
     },[ setTailFetchUrl, isOpen ]);
 
     const toggleMenu = useCallback (() => {
@@ -36,6 +38,7 @@ const HamburgerMenu: React.FC = () => {
                         key={ index }
                         onClick={ handleClick }
                         data-index={index}
+                        className={ selectedTabIndex === index ? 'active' : '' }
                         >
                             <li key={ index }>
                                 { newsItem.menuTitle }
