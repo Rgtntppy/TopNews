@@ -1,8 +1,9 @@
 import { useContext, useCallback, MouseEventHandler } from 'react';
 import { propsContext } from 'src/App';
-import { newsList } from 'src/Component/News/newsList'
+import { newsList } from 'src/Component/Header/newsList'
+import { HeaderMenuProps } from 'src/Component/Header/headerInterface';
 
-const HeaderMenu: React.FC = () => {
+const HeaderMenu: React.FC<HeaderMenuProps> = ({ selectedTabIndex, setSelectedTabIndex }) => {
     const { setTailFetchUrl } = useContext(propsContext)!;
 
     const handleClick: MouseEventHandler<HTMLButtonElement> = useCallback((event) => {
@@ -10,6 +11,7 @@ const HeaderMenu: React.FC = () => {
         const newsItem = newsList[index];
         console.log(newsItem.menuTitle+'がクリックされました');
         setTailFetchUrl(newsItem.tailFetchUrl);
+        setSelectedTabIndex(index);
     },[ setTailFetchUrl ]);
 
     return (
@@ -19,7 +21,8 @@ const HeaderMenu: React.FC = () => {
                 <button
                 key={ index }
                 onClick={ handleClick }
-                data-index={index}
+                data-index={ index }
+                className={ selectedTabIndex === index ? 'active' : '' }
                 >
                     <li key={ newsItem.tailFetchUrl }>
                         { newsItem.menuTitle }
