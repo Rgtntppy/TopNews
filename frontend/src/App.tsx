@@ -11,7 +11,7 @@ interface propsContext {
 export const propsContext = createContext<propsContext | undefined>(undefined);
 
 function App() {
-  const [tailFetchUrl, setTailFetchUrl] = useState<string>('/item/8863.json?print=pretty');
+  const [tailFetchUrl, setTailFetchUrl] = useState<string>('/topstories.json?print=pretty');
   
   return (
     <propsContext.Provider value={{ tailFetchUrl, setTailFetchUrl }}>
