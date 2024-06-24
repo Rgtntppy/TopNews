@@ -2,7 +2,8 @@ import 'src/Component/News/news.scss';
 import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { propsContext } from 'src/App';
-import { Story } from '/src/Component/News/newsInterfaces';
+import { Story } from 'src/Component/News/newsInterfaces';
+import LoadingSpinner from 'src/Component/News/LoadingIcon/LoadingSpinner';
 
 const BASE_URL = 'https://hacker-news.firebaseio.com/v0';
 
@@ -21,7 +22,7 @@ const News: React.FC = () => {
         const response = await axios.get(totalUrl);
         const result = response.data;
         setFetchData(result);
-        console.log(result);
+        console.log(response)
 
         if (Array.isArray(result)) {
           const storyPromises = result.slice(0, 10).map(id =>
@@ -30,6 +31,8 @@ const News: React.FC = () => {
           const storyResponses = await Promise.all(storyPromises);
           const fetchedStories = storyResponses.map(response => response.data);
           setStories(fetchedStories);
+          console.log(fetchedStories)
+
         }else {
           setStories([result])
         }
@@ -45,7 +48,7 @@ const News: React.FC = () => {
   }, [totalUrl]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <LoadingSpinner />;
   }
 
   if (error) {
@@ -63,12 +66,14 @@ const News: React.FC = () => {
           {stories.map(story => (
             <li key={story.id}>
               <a href={story.url} target="_blank" rel="noopener noreferrer">{story.title}</a>
+              <p>{story.by}</p>
             </li>
           ))}
         </ul>
       </div>
 
-      {fetchData && (
+      {/* せっかく作ったのを消すのがもったい何ので、コメントアウトにて保管 */}
+      {/* {fetchData && (
         <>
         <div className='arrayList'>
           {Array.isArray(fetchData) ? (
@@ -86,7 +91,7 @@ const News: React.FC = () => {
           )}
         </div>
         </>
-      )}
+      )} */}
     </>
   );
 };
