@@ -75,8 +75,10 @@
     margin: 0;
     padding: 0;
     button {
-      margin: 20px 10%;
+      margin: 20px 20vw;
       padding: 0;
+      background-color: #d6d6d6;
+      border-style: none;
 
       &.active {
         background-color: #007bff;
@@ -91,6 +93,7 @@
       }
       
       &:hover {
+        border-style: none;
         background-color: #f0f0f0;
         color: rgb(30, 230, 40);
         transition: all 0.2s;
