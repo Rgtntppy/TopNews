@@ -3,6 +3,13 @@
     justify-content: center;
     ul {
         list-style: none;
+        .newsItem {
+            border-bottom: 2px solid;
+            margin: 10px;
+            &:last-child {
+                border-bottom: none;
+            }
+        }
     }
 }
 
