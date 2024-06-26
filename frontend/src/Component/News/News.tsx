@@ -66,7 +66,8 @@ const News: React.FC = () => {
           {stories.map(story => (
             <li key={story.id} className='newsItem'>
               <a href={story.url} target="_blank" rel="noopener noreferrer">{story.title}</a>
-              <p>{story.by}</p>
+              <p>By {story.by}</p>
+              <p>Score {story.score}</p>
             </li>
           ))}
         </ul>

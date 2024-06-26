@@ -8,4 +8,5 @@ export interface Story {
     title: string;
     url: string;
     by: string;
+    score: number;
 }
