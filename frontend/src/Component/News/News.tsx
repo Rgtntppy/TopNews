@@ -64,7 +64,7 @@ const News: React.FC = () => {
         <h2>{ fetchData.title || '' }</h2>
         <ul>
           {stories.map(story => (
-            <li key={story.id}>
+            <li key={story.id} className='newsItem'>
               <a href={story.url} target="_blank" rel="noopener noreferrer">{story.title}</a>
               <p>{story.by}</p>
             </li>
